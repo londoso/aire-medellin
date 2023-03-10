@@ -35,4 +35,5 @@ jobs:
         aws s3 ls
     - name: Copy files to the test website with the AWS CLI
       run: |
+        cd data
         aws s3 sync . s3://${{ secrets.AWS_BUCKET }}
