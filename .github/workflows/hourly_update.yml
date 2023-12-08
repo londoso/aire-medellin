@@ -27,4 +27,8 @@ jobs:
 
       - name: Test
         run: |
-          curl --location 'https://api.purpleair.com/v1/keys' --header 'X-API-Key: ${{ secrets.PURPLEAIR_READ_KEY }}'
+          curl --location 'https://api.purpleair.com/v1/keys' --header 'X-API-Key: ${{ secrets.PURPLEAIR_READ_KEY }}' --output test.json
+
+      - name: Test1
+        run: |
+          cat test.json
