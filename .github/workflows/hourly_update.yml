@@ -1,4 +1,4 @@
-name: Hourly leaderboard update
+name: Hourly update
 
 # Controls when the action will run.
 on:
@@ -23,12 +23,12 @@ jobs:
     steps:
 
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
-      - name: Test
+      - name: Sensores Actuales
         run: |
-          curl --location 'https://api.purpleair.com/v1/keys' --header 'X-API-Key: ${{ secrets.PURPLEAIR_READ_KEY }}' --output test.json
+          curl --location 'https://api.purpleair.com/v1/groups/${{ secrets.PURPLEAIR_GROUP_ID }}' --header 'X-API-Key: ${{ secrets.PURPLEAIR_READ_KEY }}' --output sensores_actuales.json
 
       - name: Test1
         run: |
-          cat test.json
+          cat sensores_actuales.json
