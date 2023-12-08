@@ -1,0 +1,8 @@
+```plantuml
+@startuml Hello World
+
+actor "Person" as personAlias
+
+
+@enduml
+```
