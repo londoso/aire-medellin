@@ -1,0 +1,27 @@
+name: Hourly leaderboard update
+
+# Controls when the action will run.
+on:
+  # schedule:
+  #   # Every hour, 1 minute past the hour.
+  #   - cron: "1 * * * *"
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+
+jobs:
+  hourly_update:
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
+
+    steps:
+
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Test
+        run: |
+          curl --location 'https://api.purpleair.com/v1/keys' --header 'X-API-Key: ${{ secrets.PURPLEAIR_READ_KEY }}'
