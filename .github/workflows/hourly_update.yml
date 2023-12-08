@@ -2,6 +2,9 @@ name: Hourly leaderboard update
 
 # Controls when the action will run.
 on:
+  push:
+    branches:
+      - dev
   # schedule:
   #   # Every hour, 1 minute past the hour.
   #   - cron: "1 * * * *"
