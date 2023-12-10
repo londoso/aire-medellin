@@ -31,4 +31,6 @@ jobs:
           python-version: 3.11
 
       - name: Actualiza Sensores
-        run: python test.py
+        run: |
+          pip install -r requirements.txt
+          python ./data/test.py
