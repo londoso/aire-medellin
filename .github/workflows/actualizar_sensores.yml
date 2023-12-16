@@ -32,4 +32,4 @@ jobs:
       - name: Actualiza Sensores
         run: |
           pip install -r requirements.txt
-          python ./data/actualizar_sensores.py
+          python ./data/test.py
