@@ -57,7 +57,7 @@ def actualizaciones(df_actualizar, df_actual):
     return control, adicionar, eliminar
 
 #Crea el dataframe con los sensores a actualizar
-sensores_actualizar = pd.read_json('sensores.json')
+sensores_actualizar = pd.read_json('data/sensores.json')
 
 #Consulta los sensores actuales en el grupo
 sensor_index, member_id = consulta_sensores()
