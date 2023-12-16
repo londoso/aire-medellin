@@ -2,4 +2,7 @@ import os
 
 NOMBREX = os.getenv('NOMBREX')
 
-print(NOMBREX)
+if NOMBREX=='holis':
+  print(True)
+else:
+  print(False)
