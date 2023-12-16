@@ -1,4 +1,4 @@
-name: Hourly update
+name: Actualiza lecturas
 
 # Controls when the action will run.
 on:
@@ -25,10 +25,4 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Sensores Actuales
-        run: |
-          curl --location 'https://api.purpleair.com/v1/groups/${{ secrets.PURPLEAIR_GROUP_ID }}' --header 'X-API-Key: ${{ secrets.PURPLEAIR_READ_KEY }}' --output sensores_actuales.json
 
-      - name: Test1
-        run: |
-          cat sensores_actuales.json

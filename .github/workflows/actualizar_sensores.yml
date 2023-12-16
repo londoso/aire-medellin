@@ -3,15 +3,14 @@ name: Actualiza listado de sensores
 # Controls when the action will run.
 on:
   push:
-    branches:
-      - dev
+    paths:
+    - 'data/sensores.json'
   # schedule:
-  #   # Every hour, 1 minute past the hour.
-  #   - cron: "1 * * * *"
+  #   # Every day, 00:00.
+  #   - cron: "0 0 * * *"
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
-
 
 jobs:
   actualiza_sensores:
@@ -33,4 +32,4 @@ jobs:
       - name: Actualiza Sensores
         run: |
           pip install -r requirements.txt
-          python ./data/test.py
+          python ./data/actualizar_sensores.py
