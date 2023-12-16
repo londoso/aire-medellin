@@ -33,3 +33,5 @@ jobs:
         run: |
           pip install -r requirements.txt
           python ./data/test.py
+        env:
+          NOMBREX: ${{ secrets.NOMBREX }}
