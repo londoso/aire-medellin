@@ -25,4 +25,30 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.12
+
+      - name: Realiza lectura de todos los sensores del grupo
+        run: |
+          pip install -r requirements_lectura.txt
+          python ./data/actualizar_lecturas.py
+        env:
+          PURPLEAIR_GROUP_ID: ${{ secrets.PURPLEAIR_GROUP_ID }}
+          PURPLEAIR_READ_KEY: ${{ secrets.PURPLEAIR_READ_KEY }}
+          PURPLEAIR_WRITE_KEY: ${{ secrets.PURPLEAIR_WRITE_KEY }}
+
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v2
+        with:
+          aws-access-key-id: ${{ secrets.AWS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-east-1
+
+      - name: Copy files to the test website with the AWS CLI
+        run: |
+          aws s3 cp data s3://${{ secrets.AWS_BUCKET }}/ --recursive --exclude "*" --include "*.csv"
+
+
 
