@@ -39,14 +39,14 @@ jobs:
           PURPLEAIR_READ_KEY: ${{ secrets.PURPLEAIR_READ_KEY }}
           PURPLEAIR_WRITE_KEY: ${{ secrets.PURPLEAIR_WRITE_KEY }}
 
-      - name: Configure AWS Credentials
-        uses: aws-actions/configure-aws-credentials@v2
+      - name: Configura credenciales de AWS
+        uses: aws-actions/configure-aws-credentials@v4
         with:
           aws-access-key-id: ${{ secrets.AWS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
 
-      - name: Copy files to the test website with the AWS CLI
+      - name: Copia los archivos csv con AWS CLI
         run: |
           aws s3 cp data s3://${{ secrets.AWS_BUCKET }}/ --recursive --exclude "*" --include "*.csv"
 

@@ -34,6 +34,7 @@ df = pd.DataFrame(datos, columns=campos)
 try:
     if df.size > 0:
         df.to_csv('data/' + fecha_col + '.csv', index=False)
+        print("### Archivo generado exitosamente con", df.size, "registros")
     else:
         raise NameError('No hay lectura de datos de los sensores')
 except NameError:
