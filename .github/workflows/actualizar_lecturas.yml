@@ -2,12 +2,12 @@ name: Actualiza lecturas
 
 # Controls when the action will run.
 on:
-  push:
-    branches:
-      - dev
-  # schedule:
-  #   # Every hour, 1 minute past the hour.
-  #   - cron: "1 * * * *"
+  # push:
+  #   branches:
+  #     - dev
+  schedule:
+    # Corre cada 10 minutos
+    - cron: "*/10  * * * *"
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -24,5 +24,32 @@ jobs:
 
       - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Instala Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.12
+          cache: 'pip'
+
+      - name: Realiza lectura de todos los sensores del grupo
+        run: |
+          pip install -r requirements_lectura.txt
+          python ./data/actualizar_lecturas.py
+        env:
+          PURPLEAIR_GROUP_ID: ${{ secrets.PURPLEAIR_GROUP_ID }}
+          PURPLEAIR_READ_KEY: ${{ secrets.PURPLEAIR_READ_KEY }}
+          PURPLEAIR_WRITE_KEY: ${{ secrets.PURPLEAIR_WRITE_KEY }}
+
+      - name: Configura credenciales de AWS
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-east-1
+
+      - name: Copia los archivos csv con AWS CLI
+        run: |
+          aws s3 cp data s3://${{ secrets.AWS_BUCKET }}/ --recursive --exclude "*" --include "*.csv"
+
 
 
