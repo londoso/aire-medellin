@@ -14,7 +14,7 @@ on:
 
 
 jobs:
-  hourly_update:
+  actualiza_10mins:
     runs-on: ubuntu-latest
     permissions:
       id-token: write
