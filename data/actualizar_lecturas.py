@@ -2,8 +2,7 @@ import pandas as pd
 import os
 import requests
 import json
-import pytz
-from datetime import datetime
+from datetime import datetime, timedelta
 
 # Lee las variables de entorno
 PURPLEAIR_GROUP_ID = os.getenv('PURPLEAIR_GROUP_ID')
@@ -25,9 +24,8 @@ campos = respuesta.json()['fields']
 datos = respuesta.json()['data']
 fecha = datetime.fromtimestamp(respuesta.json()['time_stamp'])
 
-co_tz = pytz.timezone('America/Bogota')
 fmt = '%Y-%m-%d-%H-%M-%S'
-fecha_col = co_tz.localize(fecha).strftime(fmt)
+fecha_col = (fecha - timedelta(hours=5)).strftime(fmt)
 
 df = pd.DataFrame(datos, columns=campos)
 
