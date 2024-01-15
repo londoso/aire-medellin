@@ -33,7 +33,7 @@ jobs:
 
       - name: Realiza lectura de todos los sensores del grupo
         run: |
-          pip install -r requirements_lectura.txt
+          pip install -r requirements.txt
           python ./data/actualizar_lecturas.py
         env:
           PURPLEAIR_GROUP_ID: ${{ secrets.PURPLEAIR_GROUP_ID }}
