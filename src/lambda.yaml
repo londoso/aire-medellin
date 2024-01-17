@@ -19,9 +19,10 @@ Resources:
             Handler: dist/lambda.handler
             Runtime: python3.12
             Architectures: 
-                - arm64
+              - arm64
             CodeUri: src/lambda/
-            Layers: arn:aws:lambda:us-east-1:336392948345:layer:AWSSDKPandas-Python312-Arm64:2
+            Layers: 
+              - arn:aws:lambda:us-east-1:336392948345:layer:AWSSDKPandas-Python312-Arm64:2
             # Pandas managed Layer https://aws-sdk-pandas.readthedocs.io/en/stable/layers.html
             MemorySize: 1512
             Policies:
