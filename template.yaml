@@ -38,13 +38,19 @@ Resources:
                     Resource: 
                       - !Join [ "", [ "arn:aws:s3:::", !Ref BucketOrigen ] ]
                       - !Join [ "", [ "arn:aws:s3:::", !Ref BucketDestino ] ]
-                  - Sid: S3
+                  - Sid: S3GetPut
                     Effect: Allow
                     Action:
-                      - s3:PutObject
-                      - s3:GetObject                      
+                      - s3:GetObject
+                      - s3:PutObject         
                     Resource: 
                       - !Join [ "", [ "arn:aws:s3:::", !Ref BucketOrigen, "/*" ] ]
+                      - !Join [ "", [ "arn:aws:s3:::", !Ref BucketDestino, "/*" ] ]
+                  - Sid: S3Delete
+                    Effect: Allow
+                    Action:                      
+                      - s3:DeleteObject                  
+                    Resource:
                       - !Join [ "", [ "arn:aws:s3:::", !Ref BucketDestino, "/*" ] ]
             Environment:
                 Variables:
