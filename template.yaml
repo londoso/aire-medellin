@@ -35,16 +35,16 @@ Resources:
                     Action:
                       - s3:ListAllMyBuckets
                     Resource: 
-                      - !Join [ "", [ "arn:aws:s3:::", !Ref BucketOrigen, "-" ] ]
-                      - !Join [ "", [ "arn:aws:s3:::", !Ref BucketDestino, "-" ] ]
+                      - !Join [ "", [ "arn:aws:s3:::", !Ref BucketOrigen ] ]
+                      - !Join [ "", [ "arn:aws:s3:::", !Ref BucketDestino ] ]
                   - Sid: S3
                     Effect: Allow
                     Action:
                       - s3:PutObject
                       - s3:GetObject
                     Resource: 
-                      - !Join [ "", [ "arn:aws:s3:::", !Ref BucketOrigen, "-" ] ]
-                      - !Join [ "", [ "arn:aws:s3:::", !Ref BucketDestino, "-" ] ]
+                      - !Join [ "", [ "arn:aws:s3:::", !Ref BucketOrigen ] ]
+                      - !Join [ "", [ "arn:aws:s3:::", !Ref BucketDestino ] ]
             Environment:
                 Variables:
                     dummy: test
