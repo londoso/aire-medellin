@@ -29,12 +29,12 @@ jobs:
 
       - name: Instala AWS Sam
         uses: aws-actions/setup-sam@v2
+        with:
+          use-installer: true
 
       - name: Despliega los servicios en AWS
         run: | 
-          sam deploy --no-confirm-changeset --no-fail-on-empty-changeset \
-          --template-file src/template.yaml \
-          --stack-name actualiza-aire-medellin-diario
+          sam deploy --no-confirm-changeset --no-fail-on-empty-changeset
 
       # - name: Despliegue a AWS CloudFormation
       #   uses: aws-actions/aws-cloudformation-github-deploy@v1
