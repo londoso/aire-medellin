@@ -27,6 +27,7 @@ Resources:
               - arn:aws:lambda:us-east-1:336392948345:layer:AWSSDKPandas-Python312-Arm64:2
             # Pandas managed Layer https://aws-sdk-pandas.readthedocs.io/en/stable/layers.html
             MemorySize: 1512
+            Timeout: 300
             Policies:
               - Version: '2012-10-17'
                 Statement:
@@ -51,7 +52,7 @@ Resources:
                     Action:                      
                       - s3:DeleteObject                  
                     Resource:
-                      - !Join [ "", [ "arn:aws:s3:::", !Ref BucketDestino, "/*" ] ]
+                      - !Join [ "", [ "arn:aws:s3:::", !Ref BucketOrigen, "/*" ] ]
             Environment:
                 Variables:
                     BucketOrigen: !Ref BucketOrigen
