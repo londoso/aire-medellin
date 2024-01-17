@@ -2,8 +2,8 @@ import os
 import awswrangler as wr
 from datetime import datetime, timedelta
 
-def fechas_unicas(lista):
-    l_replace = [lst.replace(bucket_name_prefix, '') for lst in lista]
+def fechas_unicas(lista, buscar):
+    l_replace = [lst.replace(buscar, '') for lst in lista]
     dates = ['-'.join(lst.split('-')[:3]) for lst in l_replace]
     unique_dates = set(dates)
     return unique_dates
@@ -16,7 +16,7 @@ def lambda_handler(event, context):
     fecha_col = (datetime.now() - timedelta(hours=5)).strftime('%Y-%m-%d')
     
     try:
-        lista_objetos = wr.s3.list_objects(bucket_name_prefix)
+        lista_objetos = wr.s3.list_objects(bucket_name_prefix, bucket_name_prefix)
         fechas = fechas_unicas(lista_objetos)
 
         for fecha in fechas:
