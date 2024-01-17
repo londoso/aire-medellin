@@ -32,8 +32,8 @@ jobs:
 
       - name: Despliega los servicios en AWS
         run: | 
-          sam deploy --no-confirm-changeset --no-fail-on-empty-changeset /
-          --template-file src/template.yaml /
+          sam deploy --no-confirm-changeset --no-fail-on-empty-changeset \
+          --template-file src/template.yaml \
           --stack-name actualiza-aire-medellin-diario
 
       # - name: Despliegue a AWS CloudFormation
