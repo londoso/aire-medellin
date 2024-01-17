@@ -18,7 +18,7 @@ Resources:
     LambdaFunction:
         Type: AWS::Serverless::Function
         Properties:
-            Handler: lambda.handler
+            Handler: lambda.lambda_handler
             Runtime: python3.12
             Architectures: 
               - arm64
@@ -42,9 +42,11 @@ Resources:
                     Action:
                       - s3:PutObject
                       - s3:GetObject
+                      - s3:ListBucket
                     Resource: 
                       - !Join [ "", [ "arn:aws:s3:::", !Ref BucketOrigen ] ]
                       - !Join [ "", [ "arn:aws:s3:::", !Ref BucketDestino ] ]
             Environment:
                 Variables:
-                    dummy: test
+                    BucketOrigen: !Ref BucketOrigen
+                    BucketDestino: !Ref BucketDestino

@@ -18,7 +18,7 @@ capabilities = "CAPABILITY_IAM"
 confirm_changeset = false
 #resolve_s3 = true
 fail_on_empty_changeset = false
-parameter_overrides = "BucketOrigen=bucket1 BucketDestino=bucket2"
+parameter_overrides = "BucketOrigen=aire-medellin BucketDestino=aire-medellin-datos"
 
 [default.package.parameters]
 #resolve_s3 = true
