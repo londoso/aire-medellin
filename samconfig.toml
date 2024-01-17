@@ -5,6 +5,7 @@ version = 0.1
 [default]
 [default.global.parameters]
 stack_name = "actualiza-aire-medellin-diario"
+s3_bucket = "sam-objects-tmp-noborrar"
 
 [default.build.parameters]
 cached = true
@@ -17,6 +18,7 @@ lint = true
 capabilities = "CAPABILITY_IAM"
 confirm_changeset = true
 resolve_s3 = true
+parameter-overrides = "file:///${{ github.workspace }}/parameters.json"
 
 [default.package.parameters]
 resolve_s3 = true
@@ -29,5 +31,3 @@ warm_containers = "EAGER"
 
 [default.local_start_lambda.parameters]
 warm_containers = "EAGER"
-
-parameter-overrides = "file:///${{ github.workspace }}/parameters.json"

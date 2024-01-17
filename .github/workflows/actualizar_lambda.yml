@@ -4,8 +4,9 @@ on:
   push:
     paths:
     - '.github/workflows/actualizar_lambda.yml'
-    - 'src/template.yaml'
-    - 'src/lambda/lambda.py'
+    - 'template.yaml'
+    - 'lambda/lambda.py'
+    - 'parameters.json'
   workflow_dispatch:
 
 jobs:
@@ -33,8 +34,7 @@ jobs:
           use-installer: true
 
       - name: Despliega los servicios en AWS
-        run: | 
-          sam deploy --no-confirm-changeset --no-fail-on-empty-changeset
+        run: sam deploy --no-confirm-changeset --no-fail-on-empty-changeset
 
       # - name: Despliegue a AWS CloudFormation
       #   uses: aws-actions/aws-cloudformation-github-deploy@v1
