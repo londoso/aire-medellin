@@ -35,7 +35,7 @@ jobs:
           use-installer: true
 
       - name: Despliega los servicios en AWS
-        run: sam deploy --no-confirm-changeset --no-fail-on-empty-changeset --s3-bucket ${{ secrets.S3_FOR_SAM }}
+        run: sam deploy
 
       # - name: Despliegue a AWS CloudFormation
       #   uses: aws-actions/aws-cloudformation-github-deploy@v1

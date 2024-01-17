@@ -15,13 +15,14 @@ lint = true
 
 [default.deploy.parameters]
 capabilities = "CAPABILITY_IAM"
-#confirm_changeset = true
+confirm_changeset = false
 #resolve_s3 = true
-parameter-overrides = "file://parameters.json"
+s3_bucket = "${{ secrets.S3_FOR_SAM }}"
+fail_on_empty_changeset = false
+parameter_overrides = "file://parameters.json"
 
 [default.package.parameters]
 #resolve_s3 = true
-
 
 [default.sync.parameters]
 watch = true
