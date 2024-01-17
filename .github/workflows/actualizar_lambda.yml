@@ -3,6 +3,7 @@ name: Actualiza listado de sensores
 on:
   push:
     paths:
+    - '.github/workflows/actualizar_lambda.yml'
     - 'src/lambda.yml'
     - 'src/lambda/lambda.py'
   workflow_dispatch:
