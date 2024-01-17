@@ -1,0 +1,10 @@
+[
+    {
+      "ParameterKey": "BucketOrigen",
+      "ParameterValue": "bucket1"
+    },
+    {
+        "ParameterKey": "BucketDestino",
+        "ParameterValue": "bucket2"
+    }
+  ]
