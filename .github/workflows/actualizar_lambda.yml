@@ -6,6 +6,7 @@ on:
     - '.github/workflows/actualizar_lambda.yml'
     - 'template.yaml'
     - 'lambda/lambda.py'
+    - 'parameters.json'
     - 'samconfig.toml'
   workflow_dispatch:
 
@@ -34,7 +35,7 @@ jobs:
           use-installer: true
 
       - name: Despliega los servicios en AWS
-        run: sam deploy
+        run: sam deploy --s3-bucket ${{ secrets.S3_FOR_SAM }}
 
       # - name: Despliegue a AWS CloudFormation
       #   uses: aws-actions/aws-cloudformation-github-deploy@v1
