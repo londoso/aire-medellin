@@ -17,11 +17,12 @@ lint = true
 capabilities = "CAPABILITY_IAM"
 confirm_changeset = true
 resolve_s3 = true
-parameter-overrides = "file:///${{ github.workspace }}/parameters.json"
+parameter-overrides = "file://parameters.json"
+s3_bucket = "sam-objects-tmp-noborrar"
 
 [default.package.parameters]
 # resolve_s3 = true
-s3_bucket = "sam-objects-tmp-noborrar"
+
 
 [default.sync.parameters]
 watch = true
