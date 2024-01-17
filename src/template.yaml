@@ -6,9 +6,11 @@ Parameters:
 
   BucketOrigen:
     Description: Nombre del bucket con los objetos crudos
+    Default: default
     Type: String
   BucketDestino:
     Description: Nombre del bucket con los objetos procesados y particionados por día
+    Default: default
     Type: String
 
 Resources:

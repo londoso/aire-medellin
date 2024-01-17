@@ -4,7 +4,7 @@ on:
   push:
     paths:
     - '.github/workflows/actualizar_lambda.yml'
-    - 'src/lambda.yaml'
+    - 'src/template.yaml'
     - 'src/lambda/lambda.py'
   workflow_dispatch:
 
@@ -27,10 +27,16 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
 
-      - name: Despliegue a AWS CloudFormation
-        uses: aws-actions/aws-cloudformation-github-deploy@v1
-        with:
-          name: actualiza-aire-medellin-diario
-          template: src/lambda.yaml
-          parameter-overrides: "file:///${{ github.workspace }}/src/parameters.json"
-          capabilities: CAPABILITY_AUTO_EXPAND
+      - name: Instala AWS Sam
+        uses: aws-actions/setup-sam@v2
+
+      - name: Despliega los servicios en AWS
+        run: sam deploy --no-confirm-changeset --no-fail-on-empty-changeset -t src/template.yaml
+
+      # - name: Despliegue a AWS CloudFormation
+      #   uses: aws-actions/aws-cloudformation-github-deploy@v1
+      #   with:
+      #     name: actualiza-aire-medellin-diario
+      #     template: src/lambda.yaml
+      #     parameter-overrides: "file:///${{ github.workspace }}/src/parameters.json"
+      #     capabilities: CAPABILITY_AUTO_EXPAND
