@@ -4,7 +4,7 @@ on:
   push:
     paths:
     - '.github/workflows/actualizar_lambda.yml'
-    - 'src/lambda.yml'
+    - 'src/lambda.yaml'
     - 'src/lambda/lambda.py'
   workflow_dispatch:
 
