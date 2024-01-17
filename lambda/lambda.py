@@ -16,8 +16,8 @@ def lambda_handler(event, context):
     fecha_col = (datetime.now() - timedelta(hours=5)).strftime('%Y-%m-%d')
     
     try:
-        lista_objetos = wr.s3.list_objects(bucket_name_prefix, bucket_name_prefix)
-        fechas = fechas_unicas(lista_objetos)
+        lista_objetos = wr.s3.list_objects(bucket_name_prefix)
+        fechas = fechas_unicas(lista_objetos, bucket_name_prefix)
 
         for fecha in fechas:
             if fecha != fecha_col:
