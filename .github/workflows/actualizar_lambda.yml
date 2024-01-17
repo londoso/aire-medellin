@@ -32,3 +32,4 @@ jobs:
           name: actualiza-aire-medellin-diario
           template: src/lambda.yaml
           parameter-overrides: "file:///${{ github.workspace }}/src/parameters.json"
+          capabilities: CAPABILITY_AUTO_EXPAND
