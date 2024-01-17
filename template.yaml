@@ -43,10 +43,9 @@ Resources:
                       - s3:PutObject
                       - s3:GetObject
                       - s3:ListBucket
-                      - s3:HeadObject
                     Resource: 
-                      - !Join [ "", [ "arn:aws:s3:::", !Ref BucketOrigen ] ]
-                      - !Join [ "", [ "arn:aws:s3:::", !Ref BucketDestino ] ]
+                      - !Join [ "", [ "arn:aws:s3:::", !Ref BucketOrigen, "/*" ] ]
+                      - !Join [ "", [ "arn:aws:s3:::", !Ref BucketDestino, "/*" ] ]
             Environment:
                 Variables:
                     BucketOrigen: !Ref BucketOrigen
