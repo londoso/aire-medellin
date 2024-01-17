@@ -18,10 +18,9 @@ capabilities = "CAPABILITY_IAM"
 confirm_changeset = true
 resolve_s3 = true
 parameter-overrides = "file://parameters.json"
-s3_bucket = "sam-objects-tmp-noborrar"
 
 [default.package.parameters]
-# resolve_s3 = true
+resolve_s3 = true
 
 
 [default.sync.parameters]
