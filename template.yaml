@@ -62,3 +62,6 @@ Resources:
                 Type: ScheduleV2
                 Properties:
                   ScheduleExpression: cron(30 0 * * ? *)
+                  ScheduleExpressionTimezone: "-5"
+                  Name: aire-medellin-lambda-consolida
+                  State: ENABLED
