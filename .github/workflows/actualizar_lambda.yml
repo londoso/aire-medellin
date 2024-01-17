@@ -6,7 +6,6 @@ on:
     - '.github/workflows/actualizar_lambda.yml'
     - 'template.yaml'
     - 'lambda/lambda.py'
-    - 'parameters.json'
     - 'samconfig.toml'
   workflow_dispatch:
 

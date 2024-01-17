@@ -19,7 +19,7 @@ confirm_changeset = false
 #resolve_s3 = true
 s3_bucket = "${{ secrets.S3_FOR_SAM }}"
 fail_on_empty_changeset = false
-parameter_overrides = "file://parameters.json"
+parameter_overrides = "BucketOrigen=bucket1,BucketDestino=bucket2"
 
 [default.package.parameters]
 #resolve_s3 = true
