@@ -28,6 +28,7 @@ fmt = '%Y-%m-%d-%H-%M-%S'
 fecha_col = (fecha - timedelta(hours=5)).strftime(fmt)
 
 df = pd.DataFrame(datos, columns=campos)
+df['timestamp'] = fecha - timedelta(hours=5)
 
 try:
     if df.size > 0:
