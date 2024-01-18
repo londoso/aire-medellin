@@ -3,6 +3,7 @@ import os
 import requests
 import json
 import tabulate
+from datetime import datetime, timedelta
 
 # Lee las variables de entorno
 PURPLEAIR_GROUP_ID = os.getenv('PURPLEAIR_GROUP_ID')
@@ -26,6 +27,7 @@ df = pd.DataFrame(datos, columns=campos)
 df['last_seen'] = pd.to_datetime(df['last_seen'], unit='s') - pd.Timedelta(hours=5)
 df['mapa'] = '<a href="https://map.purpleair.com/1/mAQI/a10/p604800/cC0?select=' + df['sensor_index'].astype(str) + '">ver mapa</a>'
 md = df.to_markdown(index=False)
+act = (datetime.now() - timedelta(hours=5)).strftime('%Y-%m-%d %H-%M-%S')
 
 readme = \
     """
@@ -35,6 +37,8 @@ Datos de calidad del aire recolectados por sensores [PurpleAir](https://www2.pur
 Actualmente se están recolectando los datos de las partículas [PM 2.5](https://oehha.ca.gov/calenviroscreen/indicator/pm25) con una periodicidad de 5 minutos y diariamente se consolidan todas las lecturas en un solo archivo CSV para ser almacenadas en un bucket de S3 público.
 
 ## Lista de sensores
+
+Última actualización: {}
 
 {}
 
@@ -90,7 +94,7 @@ https://registry.opendata.aws/collab/asdi/
 **Anderson Londoño**<br>
 <londoso@gmail.com>
 
-    """.format(md)
+    """.format(act, md)
 
 with open('../README.md', 'w') as f:
         f.write(readme)
