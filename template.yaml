@@ -1,6 +1,6 @@
 AWSTemplateFormatVersion: '2010-09-09'
 Transform: AWS::Serverless-2016-10-31
-Description: Función para consolidar la
+Description: Funcion para consolidar las lecturas de todos los sensores en un solo archivo diariamente
 
 Parameters:
 
@@ -59,9 +59,8 @@ Resources:
                     BucketDestino: !Ref BucketDestino
             Events:
               ScheduleEvent:
-                Type: ScheduleV2
+                Type: Schedule
                 Properties:
-                  ScheduleExpression: cron(30 0 * * ? *)
-                  ScheduleExpressionTimezone: "-5"
+                  ScheduleExpression: cron(30 5 * * ? *)
                   Name: aire-medellin-lambda-consolida
                   State: ENABLED
