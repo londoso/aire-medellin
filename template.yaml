@@ -58,7 +58,7 @@ Resources:
                     BucketOrigen: !Ref BucketOrigen
                     BucketDestino: !Ref BucketDestino
             Events:
-              ScheduleEvent:
+              CWSchedule:
                 Type: Schedule
                 Properties:
                   Schedule: cron(30 5 * * ? *)
