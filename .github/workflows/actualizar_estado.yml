@@ -39,3 +39,9 @@ jobs:
           PURPLEAIR_GROUP_ID: ${{ secrets.PURPLEAIR_GROUP_ID }}
           PURPLEAIR_READ_KEY: ${{ secrets.PURPLEAIR_READ_KEY }}
           PURPLEAIR_WRITE_KEY: ${{ secrets.PURPLEAIR_WRITE_KEY }}
+
+      - name: Commit documentación
+        run: |
+          git add .
+          git commit -m "Actualización de documentación" || echo "No hay cambios"
+          git push
