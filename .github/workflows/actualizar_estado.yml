@@ -2,9 +2,9 @@ name: Actualiza estado sensores
 
 # Controls when the action will run.
 on:
-  push:
-    branches:
-      - dev
+  # push:
+  #   branches:
+  #     - dev
   schedule:
     # Corre todos los días 12 am
     - cron: "* 5 * * *"
