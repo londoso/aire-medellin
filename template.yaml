@@ -61,6 +61,7 @@ Resources:
               ScheduleEvent:
                 Type: Schedule
                 Properties:
-                  ScheduleExpression: cron(30 5 * * ? *)
+                  Schedule: cron(30 5 * * ? *)
                   Name: aire-medellin-lambda-consolida
-                  State: ENABLED
+                  Description: Corre diariamente para consolidar las lecturas de todos los sensores en un solo archivo
+                  Enabled: true
