@@ -1,0 +1,41 @@
+name: Actualiza estado sensores
+
+# Controls when the action will run.
+on:
+  # push:
+  #   branches:
+  #     - dev
+  schedule:
+    # Corre todos los días 12 am
+    - cron: "* 5 * * *"
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+
+jobs:
+  actualiza_estado:
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
+
+    steps:
+
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Instala Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.12
+          cache: 'pip'
+
+      - name: Realiza la actualización de estado de sensores
+        run: |
+          pip install -r requirements_doc.txt
+          python ./data/actualizar_estado.py
+        env:
+          PURPLEAIR_GROUP_ID: ${{ secrets.PURPLEAIR_GROUP_ID }}
+          PURPLEAIR_READ_KEY: ${{ secrets.PURPLEAIR_READ_KEY }}
+          PURPLEAIR_WRITE_KEY: ${{ secrets.PURPLEAIR_WRITE_KEY }}

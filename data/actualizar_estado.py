@@ -1,4 +1,34 @@
+import pandas as pd
+import os
+import requests
+import json
+import tabulate
 
+# Lee las variables de entorno
+PURPLEAIR_GROUP_ID = os.getenv('PURPLEAIR_GROUP_ID')
+PURPLEAIR_READ_KEY = os.getenv('PURPLEAIR_READ_KEY')
+PURPLEAIR_WRITE_KEY = os.getenv('PURPLEAIR_WRITE_KEY')
+
+#Función para consultar los datos de un grupo
+## Retorna:
+# response: respuesta codificada en json
+def leer_sensores():    
+    api_url = f'https://api.purpleair.com/v1/groups/{PURPLEAIR_GROUP_ID}/members'
+    headers = {'X-API-Key': PURPLEAIR_READ_KEY}
+    params = {'fields': 'name, model, latitude, longitude, last_seen'}
+    response = requests.get(api_url, params=params, headers=headers)
+    return response
+
+respuesta = leer_sensores()
+campos = respuesta.json()['fields']
+datos = respuesta.json()['data']
+df = pd.DataFrame(datos, columns=campos)
+df['last_seen'] = pd.to_datetime(df['last_seen'], unit='s') - pd.Timedelta(hours=5)
+df['mapa'] = '<a href="https://map.purpleair.com/1/mAQI/a10/p604800/cC0?select=' + df['sensor_index'].astype(str) + '">ver mapa</a>'
+md = df.to_markdown(index=False)
+
+readme = \
+    """
 # Aire-Medellin
 Datos de calidad del aire recolectados por sensores [PurpleAir](https://www2.purpleair.com/) en la ciudad de Medellín y toda el área metropolitana del valle del aburrá.
 
@@ -6,17 +36,7 @@ Actualmente se están recolectando los datos de las partículas [PM 2.5](https:/
 
 ## Lista de sensores
 
-|   sensor_index | last_seen           | name                     | model    |   latitude |   longitude | mapa                                                                                  |
-|---------------:|:--------------------|:-------------------------|:---------|-----------:|------------:|:--------------------------------------------------------------------------------------|
-|          11338 | 2024-01-17 22:04:32 | PRS13MED                 | PA-II    |    6.23251 |    -75.5769 | <a href="https://map.purpleair.com/1/mAQI/a10/p604800/cC0?select=11338">ver mapa</a>  |
-|          27552 | 2024-01-17 22:04:13 | Rosales del Parque       | PA-II    |    6.22955 |    -75.5918 | <a href="https://map.purpleair.com/1/mAQI/a10/p604800/cC0?select=27552">ver mapa</a>  |
-|          27597 | 2024-01-17 22:05:52 | Sensor La Villa          | PA-II    |    6.2352  |    -75.6043 | <a href="https://map.purpleair.com/1/mAQI/a10/p604800/cC0?select=27597">ver mapa</a>  |
-|          27617 | 2024-01-17 22:04:51 | Buenos Aires             | PA-II    |    6.23967 |    -75.5547 | <a href="https://map.purpleair.com/1/mAQI/a10/p604800/cC0?select=27617">ver mapa</a>  |
-|          52163 | 2024-01-17 22:05:12 | Edificio Miró, El Tesoro | PA-II-SD |    6.20039 |    -75.5584 | <a href="https://map.purpleair.com/1/mAQI/a10/p604800/cC0?select=52163">ver mapa</a>  |
-|          86891 | 2024-01-17 22:04:56 | Summan S.A.S. 5          | PA-II    |    6.1568  |    -75.5887 | <a href="https://map.purpleair.com/1/mAQI/a10/p604800/cC0?select=86891">ver mapa</a>  |
-|          86937 | 2024-01-17 22:04:48 | Summan S.A.S.            | PA-II    |    6.21409 |    -75.5717 | <a href="https://map.purpleair.com/1/mAQI/a10/p604800/cC0?select=86937">ver mapa</a>  |
-|          99091 | 2024-01-17 22:04:06 | S.O.S                    | PA-II-SD |    6.37818 |    -75.4513 | <a href="https://map.purpleair.com/1/mAQI/a10/p604800/cC0?select=99091">ver mapa</a>  |
-|         170207 | 2024-01-17 22:04:50 | Almeria: Indoor          | PA-I-LED |    6.24362 |    -75.6156 | <a href="https://map.purpleair.com/1/mAQI/a10/p604800/cC0?select=170207">ver mapa</a> |
+{}
 
 ## Metadatos
 
@@ -70,4 +90,7 @@ https://registry.opendata.aws/collab/asdi/
 **Anderson Londoño**<br>
 <londoso@gmail.com>
 
-    
+    """.format(md)
+
+with open('../README.md', 'w') as f:
+        f.write(readme)
