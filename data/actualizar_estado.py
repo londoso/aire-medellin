@@ -96,5 +96,5 @@ https://registry.opendata.aws/collab/asdi/
 
     """.format(act, md)
 
-with open('../README1.md', 'w') as f:
+with open('./README.md', 'w') as f:
         f.write(readme)
