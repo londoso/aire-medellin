@@ -35,11 +35,3 @@ jobs:
 
       - name: Despliega los servicios en AWS
         run: sam deploy --s3-bucket ${{ secrets.S3_FOR_SAM }}
-
-      # - name: Despliegue a AWS CloudFormation
-      #   uses: aws-actions/aws-cloudformation-github-deploy@v1
-      #   with:
-      #     name: actualiza-aire-medellin-diario
-      #     template: src/lambda.yaml
-      #     parameter-overrides: "file:///${{ github.workspace }}/src/parameters.json"
-      #     capabilities: CAPABILITY_AUTO_EXPAND
