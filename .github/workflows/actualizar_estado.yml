@@ -46,4 +46,4 @@ jobs:
           git config user.email londoso@gmail.com
           git add .
           git commit -m "Actualización de documentación" || echo "No hay cambios"
-          git push
+          git push --force
