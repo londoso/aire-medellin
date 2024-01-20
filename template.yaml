@@ -1,0 +1,67 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: Funcion para consolidar las lecturas de todos los sensores en un solo archivo diariamente
+
+Parameters:
+
+  BucketOrigen:
+    Description: Nombre del bucket con los objetos crudos
+    Default: default
+    Type: String
+  BucketDestino:
+    Description: Nombre del bucket con los objetos procesados y particionados por día
+    Default: default
+    Type: String
+
+Resources:
+
+    LambdaFunction:
+        Type: AWS::Serverless::Function
+        Properties:
+            Handler: lambda.lambda_handler
+            Runtime: python3.12
+            Architectures: 
+              - arm64
+            CodeUri: lambda/
+            Layers: 
+              - arn:aws:lambda:us-east-1:336392948345:layer:AWSSDKPandas-Python312-Arm64:2
+            # Pandas managed Layer https://aws-sdk-pandas.readthedocs.io/en/stable/layers.html
+            MemorySize: 1512
+            Timeout: 300
+            Policies:
+              - Version: '2012-10-17'
+                Statement:
+                  - Sid: S3List
+                    Effect: Allow
+                    Action:
+                      - s3:ListAllMyBuckets
+                      - s3:ListBucket
+                    Resource: 
+                      - !Join [ "", [ "arn:aws:s3:::", !Ref BucketOrigen ] ]
+                      - !Join [ "", [ "arn:aws:s3:::", !Ref BucketDestino ] ]
+                  - Sid: S3GetPut
+                    Effect: Allow
+                    Action:
+                      - s3:GetObject
+                      - s3:PutObject         
+                    Resource: 
+                      - !Join [ "", [ "arn:aws:s3:::", !Ref BucketOrigen, "/*" ] ]
+                      - !Join [ "", [ "arn:aws:s3:::", !Ref BucketDestino, "/*" ] ]
+                  - Sid: S3Delete
+                    Effect: Allow
+                    Action:                      
+                      - s3:DeleteObject                  
+                    Resource:
+                      - !Join [ "", [ "arn:aws:s3:::", !Ref BucketOrigen, "/*" ] ]
+            Environment:
+                Variables:
+                    BucketOrigen: !Ref BucketOrigen
+                    BucketDestino: !Ref BucketDestino
+            Events:
+              CWSchedule:
+                Type: Schedule
+                Properties:
+                  Schedule: cron(30 5 * * ? *)
+                  Name: aire-medellin-lambda-consolida
+                  Description: Corre diariamente para consolidar las lecturas de todos los sensores en un solo archivo
+                  Enabled: true

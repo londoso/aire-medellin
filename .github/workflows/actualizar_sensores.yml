@@ -5,9 +5,6 @@ on:
   push:
     paths:
     - 'data/sensores.json'
-  # schedule:
-  #   # Every day, 00:00.
-  #   - cron: "0 0 * * *"
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -24,10 +21,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Python
+      - name: Instala Python
         uses: actions/setup-python@v4
         with:
           python-version: 3.12
+          cache: 'pip'
 
       - name: Actualiza Sensores
         run: |

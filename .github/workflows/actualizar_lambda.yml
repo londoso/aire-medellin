@@ -1,0 +1,37 @@
+name: Actualiza listado de sensores
+
+on:
+  push:
+    paths:
+    - '.github/workflows/actualizar_lambda.yml'
+    - 'template.yaml'
+    - 'lambda/lambda.py'
+    - 'samconfig.toml'
+  workflow_dispatch:
+
+jobs:
+  lambda:
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
+
+    steps:
+
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Configura credenciales de AWS
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-east-1
+
+      - name: Instala AWS Sam
+        uses: aws-actions/setup-sam@v2
+        with:
+          use-installer: true
+
+      - name: Despliega los servicios en AWS
+        run: sam deploy --s3-bucket ${{ secrets.S3_FOR_SAM }}
