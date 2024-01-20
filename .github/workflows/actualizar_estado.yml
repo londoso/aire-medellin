@@ -42,11 +42,8 @@ jobs:
 
       - name: Commit documentación
         run: |
-          git config user.name github-actions
-          git config user.email github-actions@github.com
-          tree
-          pwd
-          git status
+          git config user.name londoso-bot
+          git config user.email londoso@gmail.com
           git add .
           git commit -m "Actualización de documentación" || echo "No hay cambios"
           git push
