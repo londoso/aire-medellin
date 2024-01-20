@@ -24,6 +24,8 @@ jobs:
 
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.LONDOSO_TOKEN }}
 
       - name: Instala Python
         uses: actions/setup-python@v4
