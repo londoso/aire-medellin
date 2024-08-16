@@ -6,19 +6,19 @@ Actualmente se están recolectando los datos de las partículas [PM 2.5](https:/
 
 ## Lista de sensores
 
-Última actualización: 2024-08-15 01-17-18
+Última actualización: 2024-08-16 00-15-55
 
 |   sensor_index | last_seen           | name                     | model    |   latitude |   longitude | mapa                                                                                  |
 |---------------:|:--------------------|:-------------------------|:---------|-----------:|------------:|:--------------------------------------------------------------------------------------|
-|          11338 | 2024-08-15 01:15:24 | PRS13MED                 | PA-II    |    6.23251 |    -75.5769 | <a href="https://map.purpleair.com/1/mAQI/a10/p604800/cC0?select=11338">ver mapa</a>  |
-|          27552 | 2024-08-15 01:16:49 | Rosales del Parque       | PA-II    |    6.22955 |    -75.5918 | <a href="https://map.purpleair.com/1/mAQI/a10/p604800/cC0?select=27552">ver mapa</a>  |
-|          27597 | 2024-08-15 01:15:12 | Sensor La Villa          | PA-II    |    6.2352  |    -75.6043 | <a href="https://map.purpleair.com/1/mAQI/a10/p604800/cC0?select=27597">ver mapa</a>  |
-|          27617 | 2024-08-15 01:15:24 | Buenos Aires             | PA-II    |    6.23967 |    -75.5547 | <a href="https://map.purpleair.com/1/mAQI/a10/p604800/cC0?select=27617">ver mapa</a>  |
-|          52163 | 2024-08-15 01:16:42 | Edificio Miró, El Tesoro | PA-II-SD |    6.20039 |    -75.5584 | <a href="https://map.purpleair.com/1/mAQI/a10/p604800/cC0?select=52163">ver mapa</a>  |
-|          86891 | 2024-08-15 01:15:49 | Summan S.A.S. 5          | PA-II    |    6.1568  |    -75.5887 | <a href="https://map.purpleair.com/1/mAQI/a10/p604800/cC0?select=86891">ver mapa</a>  |
-|          86937 | 2024-08-15 01:16:10 | Summan S.A.S.            | PA-II    |    6.21409 |    -75.5717 | <a href="https://map.purpleair.com/1/mAQI/a10/p604800/cC0?select=86937">ver mapa</a>  |
-|          99091 | 2024-08-15 01:15:59 | S.O.S                    | PA-II-SD |    6.37818 |    -75.4513 | <a href="https://map.purpleair.com/1/mAQI/a10/p604800/cC0?select=99091">ver mapa</a>  |
-|         170207 | 2024-08-15 01:15:18 | Almeria: Indoor          | PA-I-LED |    6.24362 |    -75.6156 | <a href="https://map.purpleair.com/1/mAQI/a10/p604800/cC0?select=170207">ver mapa</a> |
+|          11338 | 2024-08-16 00:13:50 | PRS13MED                 | PA-II    |    6.23251 |    -75.5769 | <a href="https://map.purpleair.com/1/mAQI/a10/p604800/cC0?select=11338">ver mapa</a>  |
+|          27552 | 2024-08-16 00:15:07 | Rosales del Parque       | PA-II    |    6.22955 |    -75.5918 | <a href="https://map.purpleair.com/1/mAQI/a10/p604800/cC0?select=27552">ver mapa</a>  |
+|          27597 | 2024-08-16 00:13:32 | Sensor La Villa          | PA-II    |    6.2352  |    -75.6043 | <a href="https://map.purpleair.com/1/mAQI/a10/p604800/cC0?select=27597">ver mapa</a>  |
+|          27617 | 2024-08-16 00:13:43 | Buenos Aires             | PA-II    |    6.23967 |    -75.5547 | <a href="https://map.purpleair.com/1/mAQI/a10/p604800/cC0?select=27617">ver mapa</a>  |
+|          52163 | 2024-08-16 00:14:56 | Edificio Miró, El Tesoro | PA-II-SD |    6.20039 |    -75.5584 | <a href="https://map.purpleair.com/1/mAQI/a10/p604800/cC0?select=52163">ver mapa</a>  |
+|          86891 | 2024-08-16 00:14:15 | Summan S.A.S. 5          | PA-II    |    6.1568  |    -75.5887 | <a href="https://map.purpleair.com/1/mAQI/a10/p604800/cC0?select=86891">ver mapa</a>  |
+|          86937 | 2024-08-16 00:13:41 | Summan S.A.S.            | PA-II    |    6.21409 |    -75.5717 | <a href="https://map.purpleair.com/1/mAQI/a10/p604800/cC0?select=86937">ver mapa</a>  |
+|          99091 | 2024-08-16 00:14:23 | S.O.S                    | PA-II-SD |    6.37818 |    -75.4513 | <a href="https://map.purpleair.com/1/mAQI/a10/p604800/cC0?select=99091">ver mapa</a>  |
+|         170207 | 2024-08-16 00:13:32 | Almeria: Indoor          | PA-I-LED |    6.24362 |    -75.6156 | <a href="https://map.purpleair.com/1/mAQI/a10/p604800/cC0?select=170207">ver mapa</a> |
 
 ## Metadatos
 
