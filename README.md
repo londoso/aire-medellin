@@ -6,18 +6,18 @@ Actualmente se están recolectando los datos de las partículas [PM 2.5](https:/
 
 ## Lista de sensores
 
-Última actualización: 2024-09-07 00-15-27
+Última actualización: 2024-09-07 00-31-29
 
 |   sensor_index | last_seen           | name               | model    |   latitude |   longitude | mapa                                                                                  |
 |---------------:|:--------------------|:-------------------|:---------|-----------:|------------:|:--------------------------------------------------------------------------------------|
-|          11338 | 2024-09-07 00:13:10 | PRS13MED           | PA-II    |    6.23251 |    -75.5769 | <a href="https://map.purpleair.com/1/mAQI/a10/p604800/cC0?select=11338">ver mapa</a>  |
-|          27552 | 2024-09-07 00:13:02 | Rosales del Parque | PA-II    |    6.22955 |    -75.5918 | <a href="https://map.purpleair.com/1/mAQI/a10/p604800/cC0?select=27552">ver mapa</a>  |
-|          27597 | 2024-09-07 00:12:50 | Sensor La Villa    | PA-II    |    6.2352  |    -75.6043 | <a href="https://map.purpleair.com/1/mAQI/a10/p604800/cC0?select=27597">ver mapa</a>  |
-|          27617 | 2024-09-07 00:14:19 | Buenos Aires       | PA-II    |    6.23967 |    -75.5547 | <a href="https://map.purpleair.com/1/mAQI/a10/p604800/cC0?select=27617">ver mapa</a>  |
-|          86891 | 2024-09-07 00:13:29 | Summan S.A.S. 5    | PA-II    |    6.1568  |    -75.5887 | <a href="https://map.purpleair.com/1/mAQI/a10/p604800/cC0?select=86891">ver mapa</a>  |
-|          86937 | 2024-09-07 00:13:17 | Summan S.A.S.      | PA-II    |    6.21409 |    -75.5717 | <a href="https://map.purpleair.com/1/mAQI/a10/p604800/cC0?select=86937">ver mapa</a>  |
-|          99091 | 2024-09-07 00:13:05 | S.O.S              | PA-II-SD |    6.37818 |    -75.4513 | <a href="https://map.purpleair.com/1/mAQI/a10/p604800/cC0?select=99091">ver mapa</a>  |
-|         170207 | 2024-09-07 00:12:57 | Almeria: Indoor    | PA-I-LED |    6.24362 |    -75.6156 | <a href="https://map.purpleair.com/1/mAQI/a10/p604800/cC0?select=170207">ver mapa</a> |
+|          11338 | 2024-09-07 00:29:10 | PRS13MED           | PA-II    |    6.23251 |    -75.5769 | <a href="https://map.purpleair.com/1/mAQI/a10/p604800/cC0?select=11338">ver mapa</a>  |
+|          27552 | 2024-09-07 00:29:02 | Rosales del Parque | PA-II    |    6.22955 |    -75.5918 | <a href="https://map.purpleair.com/1/mAQI/a10/p604800/cC0?select=27552">ver mapa</a>  |
+|          27597 | 2024-09-07 00:28:51 | Sensor La Villa    | PA-II    |    6.2352  |    -75.6043 | <a href="https://map.purpleair.com/1/mAQI/a10/p604800/cC0?select=27597">ver mapa</a>  |
+|          27617 | 2024-09-07 00:30:19 | Buenos Aires       | PA-II    |    6.23967 |    -75.5547 | <a href="https://map.purpleair.com/1/mAQI/a10/p604800/cC0?select=27617">ver mapa</a>  |
+|          86891 | 2024-09-07 00:29:29 | Summan S.A.S. 5    | PA-II    |    6.1568  |    -75.5887 | <a href="https://map.purpleair.com/1/mAQI/a10/p604800/cC0?select=86891">ver mapa</a>  |
+|          86937 | 2024-09-07 00:29:22 | Summan S.A.S.      | PA-II    |    6.21409 |    -75.5717 | <a href="https://map.purpleair.com/1/mAQI/a10/p604800/cC0?select=86937">ver mapa</a>  |
+|          99091 | 2024-09-07 00:29:05 | S.O.S              | PA-II-SD |    6.37818 |    -75.4513 | <a href="https://map.purpleair.com/1/mAQI/a10/p604800/cC0?select=99091">ver mapa</a>  |
+|         170207 | 2024-09-07 00:28:58 | Almeria: Indoor    | PA-I-LED |    6.24362 |    -75.6156 | <a href="https://map.purpleair.com/1/mAQI/a10/p604800/cC0?select=170207">ver mapa</a> |
 
 ## Metadatos
 
