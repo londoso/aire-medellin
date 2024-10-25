@@ -6,22 +6,22 @@ Actualmente se están recolectando los datos de las partículas [PM 2.5](https:/
 
 ## Lista de sensores
 
-Última actualización: 2024-10-25 00-38-05
+Última actualización: 2024-10-25 00-48-46
 
 |   sensor_index | last_seen           | name                     | model    |   latitude |   longitude | mapa                                                                                  |
 |---------------:|:--------------------|:-------------------------|:---------|-----------:|------------:|:--------------------------------------------------------------------------------------|
-|          11338 | 2024-10-25 00:35:47 | PRS13MED                 | PA-II    |    6.23251 |    -75.5769 | <a href="https://map.purpleair.com/1/mAQI/a10/p604800/cC0?select=11338">ver mapa</a>  |
-|          11394 | 2024-10-25 00:36:55 | Arrayanes                | PA-II    |    6.20891 |    -75.5612 | <a href="https://map.purpleair.com/1/mAQI/a10/p604800/cC0?select=11394">ver mapa</a>  |
-|          27513 | 2024-10-25 00:36:23 | Nueva Villa de Aburrá    | PA-II    |    6.23459 |    -75.6031 | <a href="https://map.purpleair.com/1/mAQI/a10/p604800/cC0?select=27513">ver mapa</a>  |
-|          27529 | 2024-10-25 00:36:54 | Vereda Potrerito         | PA-II    |    6.33054 |    -75.5795 | <a href="https://map.purpleair.com/1/mAQI/a10/p604800/cC0?select=27529">ver mapa</a>  |
-|          27552 | 2024-10-25 00:36:11 | Rosales del Parque       | PA-II    |    6.22955 |    -75.5918 | <a href="https://map.purpleair.com/1/mAQI/a10/p604800/cC0?select=27552">ver mapa</a>  |
-|          27597 | 2024-10-25 00:35:45 | Sensor La Villa          | PA-II    |    6.2352  |    -75.6043 | <a href="https://map.purpleair.com/1/mAQI/a10/p604800/cC0?select=27597">ver mapa</a>  |
-|          27647 | 2024-10-25 00:35:17 | Robledo Aures 2          | PA-II    |    6.29436 |    -75.5911 | <a href="https://map.purpleair.com/1/mAQI/a10/p604800/cC0?select=27647">ver mapa</a>  |
-|          52163 | 2024-10-25 00:37:05 | Edificio Miró, El Tesoro | PA-II-SD |    6.20039 |    -75.5584 | <a href="https://map.purpleair.com/1/mAQI/a10/p604800/cC0?select=52163">ver mapa</a>  |
-|          86891 | 2024-10-25 00:35:34 | Summan S.A.S. 5          | PA-II    |    6.1568  |    -75.5887 | <a href="https://map.purpleair.com/1/mAQI/a10/p604800/cC0?select=86891">ver mapa</a>  |
-|          99091 | 2024-10-25 00:35:38 | S.O.S                    | PA-II-SD |    6.37818 |    -75.4513 | <a href="https://map.purpleair.com/1/mAQI/a10/p604800/cC0?select=99091">ver mapa</a>  |
-|         170167 | 2024-10-25 00:36:16 | Laureles                 | PA-I-LED |    6.24816 |    -75.5928 | <a href="https://map.purpleair.com/1/mAQI/a10/p604800/cC0?select=170167">ver mapa</a> |
-|         170207 | 2024-10-25 00:36:40 | Almeria: Indoor          | PA-I-LED |    6.24362 |    -75.6156 | <a href="https://map.purpleair.com/1/mAQI/a10/p604800/cC0?select=170207">ver mapa</a> |
+|          11338 | 2024-10-25 00:45:47 | PRS13MED                 | PA-II    |    6.23251 |    -75.5769 | <a href="https://map.purpleair.com/1/mAQI/a10/p604800/cC0?select=11338">ver mapa</a>  |
+|          11394 | 2024-10-25 00:46:55 | Arrayanes                | PA-II    |    6.20891 |    -75.5612 | <a href="https://map.purpleair.com/1/mAQI/a10/p604800/cC0?select=11394">ver mapa</a>  |
+|          27513 | 2024-10-25 00:46:22 | Nueva Villa de Aburrá    | PA-II    |    6.23459 |    -75.6031 | <a href="https://map.purpleair.com/1/mAQI/a10/p604800/cC0?select=27513">ver mapa</a>  |
+|          27529 | 2024-10-25 00:46:54 | Vereda Potrerito         | PA-II    |    6.33054 |    -75.5795 | <a href="https://map.purpleair.com/1/mAQI/a10/p604800/cC0?select=27529">ver mapa</a>  |
+|          27552 | 2024-10-25 00:46:11 | Rosales del Parque       | PA-II    |    6.22955 |    -75.5918 | <a href="https://map.purpleair.com/1/mAQI/a10/p604800/cC0?select=27552">ver mapa</a>  |
+|          27597 | 2024-10-25 00:45:45 | Sensor La Villa          | PA-II    |    6.2352  |    -75.6043 | <a href="https://map.purpleair.com/1/mAQI/a10/p604800/cC0?select=27597">ver mapa</a>  |
+|          27647 | 2024-10-25 00:47:17 | Robledo Aures 2          | PA-II    |    6.29436 |    -75.5911 | <a href="https://map.purpleair.com/1/mAQI/a10/p604800/cC0?select=27647">ver mapa</a>  |
+|          52163 | 2024-10-25 00:47:04 | Edificio Miró, El Tesoro | PA-II-SD |    6.20039 |    -75.5584 | <a href="https://map.purpleair.com/1/mAQI/a10/p604800/cC0?select=52163">ver mapa</a>  |
+|          86891 | 2024-10-25 00:47:35 | Summan S.A.S. 5          | PA-II    |    6.1568  |    -75.5887 | <a href="https://map.purpleair.com/1/mAQI/a10/p604800/cC0?select=86891">ver mapa</a>  |
+|          99091 | 2024-10-25 00:47:38 | S.O.S                    | PA-II-SD |    6.37818 |    -75.4513 | <a href="https://map.purpleair.com/1/mAQI/a10/p604800/cC0?select=99091">ver mapa</a>  |
+|         170167 | 2024-10-25 00:46:16 | Laureles                 | PA-I-LED |    6.24816 |    -75.5928 | <a href="https://map.purpleair.com/1/mAQI/a10/p604800/cC0?select=170167">ver mapa</a> |
+|         170207 | 2024-10-25 00:46:41 | Almeria: Indoor          | PA-I-LED |    6.24362 |    -75.6156 | <a href="https://map.purpleair.com/1/mAQI/a10/p604800/cC0?select=170207">ver mapa</a> |
 
 ## Metadatos
 
